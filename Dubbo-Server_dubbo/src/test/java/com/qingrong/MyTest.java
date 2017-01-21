@@ -6,4 +6,6 @@ package com.qingrong;
 public class MyTest {
 
     private String name;
+
+    private String address;
 }
