@@ -7,5 +7,5 @@ public class MyTest {
 
     private String name;
 
-    private String age;
+    private String address;
 }
