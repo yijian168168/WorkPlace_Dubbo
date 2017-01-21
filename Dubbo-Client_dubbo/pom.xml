@@ -91,15 +91,12 @@
     <build>
         <plugins>
             <plugin>
-                <groupId>org.mortbay.jetty</groupId>
+                <groupId>org.eclipse.jetty</groupId>
                 <artifactId>jetty-maven-plugin</artifactId>
-                <version>8.1.15.v20140411</version>
+                <version>9.2.18.v20160721</version>
                 <configuration>
-                    <stopKey>exit</stopKey>
-                    <stopPort>9002</stopPort>
-                    <scanIntervalSeconds>10</scanIntervalSeconds>
                     <webAppConfig>
-                        <contextPath>/Dubbo-Client_dubbo</contextPath>
+                        <contextPath>/</contextPath>
                     </webAppConfig>
                 </configuration>
             </plugin>
