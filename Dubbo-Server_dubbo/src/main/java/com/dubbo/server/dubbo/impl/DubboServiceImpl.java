@@ -11,8 +11,6 @@ import org.springframework.stereotype.Service;
 @Service
 public class DubboServiceImpl implements DubboService{
 
-    private String pgw1201_6531;
-
     public String service(String recMsg) {
         System.out.println(recMsg);
         String respMsg = "I am dubbo Server , I get your message .";
