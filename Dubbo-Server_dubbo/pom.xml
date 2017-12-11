@@ -86,24 +86,20 @@
             <artifactId>Dubbo-Interface</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
+
+        <!--Hessian-->
+        <dependency>
+            <groupId>com.caucho</groupId>
+            <artifactId>hessian</artifactId>
+            <version>4.0.7</version>
+        </dependency>
+
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>javax.servlet-api</artifactId>
+            <version>3.1.0</version>
+        </dependency>
     </dependencies>
 
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>org.mortbay.jetty</groupId>
-                <artifactId>jetty-maven-plugin</artifactId>
-                <version>8.1.15.v20140411</version>
-                <configuration>
-                    <stopKey>exit</stopKey>
-                    <stopPort>9001</stopPort>
-                    <scanIntervalSeconds>10</scanIntervalSeconds>
-                    <webAppConfig>
-                        <contextPath>/Dubbo-Server_dubbo</contextPath>
-                    </webAppConfig>
-                </configuration>
-            </plugin>
-        </plugins>
-    </build>
 
 </project>
