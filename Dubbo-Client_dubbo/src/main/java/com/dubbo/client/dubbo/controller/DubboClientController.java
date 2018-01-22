@@ -1,6 +1,5 @@
 package com.dubbo.client.dubbo.controller;
 
-import com.alibaba.dubbo.rpc.RpcContext;
 import com.dubbo.bean.dubbo.DubboRespInfo;
 import com.dubbo.bean.dubbo.DubboSendInfo;
 import com.dubbo.intf.dubbo.DubboService;
