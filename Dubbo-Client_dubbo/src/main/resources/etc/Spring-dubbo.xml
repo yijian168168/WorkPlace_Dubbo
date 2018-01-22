@@ -10,14 +10,14 @@
 
     <!-- 使用zookeeper注册中心， 可配置多个，在<dubbo:reference registry=""/> 中选择注册中心  -->
     <dubbo:registry
-            address="zookeeper://192.168.7.21:2181"/>
+            address="zookeeper://192.168.86.58:2181"
+            check="false"/>
 
     <!-- 要引用的服务 -->
-    <dubbo:reference id="dubboService_2"
-                     interface="com.dubbo.intf.dubbo.DubboService"
-                     validation="false"
-                     client="netty"
-                     filter="customer"
-    />
+    <!--<dubbo:reference id="dubboService_1"-->
+                     <!--interface="com.dubbo.intf.dubbo.DubboService"-->
+                     <!--validation="false"-->
+                     <!--client="netty"-->
+    <!--/>-->
 
 </beans>

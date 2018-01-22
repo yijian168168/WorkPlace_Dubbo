@@ -10,26 +10,22 @@
 
     <!-- 使用zookeeper注册中心暴露服务地址 -->
     <dubbo:registry
-            address="zookeeper://192.168.7.21:2181"
+            address="zookeeper://127.0.0.1:2181"
+            check="false"
             subscribe="false"
             register=""
     />
 
     <!--服务提供者协议配置 可以配置多个协议，在<dubbo:service protocol=""/> 中指定使用的协议-->
-    <dubbo:protocol id="dubbo" name="dubbo" port="20880"
-                    threadpool="fixed" threads="100" queues="200"
-                    iothreads="5" accepts="100" server="netty"
-    />
+    <dubbo:protocol name="dubbo" port="20880" />
+
+    <dubbo:protocol name="hessian" port="20990"/>
 
     <!-- 要暴露的服务接口 -->
     <dubbo:service
             interface="com.dubbo.intf.dubbo.DubboService"
             ref="dubboServiceImpl"
-            executes="10"
-            loadbalance="roundrobin"
-            token="true"
-            protocol="dubbo"
-            filter="provider"
+            protocol="hessian"
     />
 
 </beans>
