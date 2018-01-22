@@ -10,8 +10,7 @@
 
     <!-- 使用zookeeper注册中心暴露服务地址 -->
     <dubbo:registry
-            address="zookeeper://192.168.223.129:6001"
-            check="false"
+            address="zookeeper://192.168.7.21:2181"
             subscribe="false"
             register=""
     />
@@ -30,6 +29,7 @@
             loadbalance="roundrobin"
             token="true"
             protocol="dubbo"
+            filter="provider"
     />
 
 </beans>

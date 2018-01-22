@@ -1,12 +1,16 @@
 package com.dubbo.client.dubbo.controller;
 
+import com.alibaba.dubbo.rpc.RpcContext;
 import com.dubbo.bean.dubbo.DubboRespInfo;
 import com.dubbo.bean.dubbo.DubboSendInfo;
 import com.dubbo.intf.dubbo.DubboService;
+import org.slf4j.MDC;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
+
+import java.util.UUID;
 
 /**
  * Created by zhangqingrong on 2016/5/7.
@@ -21,6 +25,9 @@ public class DubboClientController{
     @RequestMapping("stringService")
     public String stringService(String recMsg){
         System.out.println(recMsg);
+        String logId = UUID.randomUUID().toString().replace("-","");
+        MDC.put("LOG_ID",logId);
+        System.out.println("+++++++logId+++++++ : " + logId);
         String respMsg = dubboService.service(recMsg);
         System.out.println(respMsg);
         return respMsg;

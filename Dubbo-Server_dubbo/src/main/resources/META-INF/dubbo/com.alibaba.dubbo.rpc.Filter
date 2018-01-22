@@ -1,0 +1,1 @@
+provider=com.dubbo.server.dubbo.filter.LogFilter

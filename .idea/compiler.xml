@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="Dubbo-Client_dubbo" />
+        <module name="Dubbo-Interface" />
+        <module name="Dubbo-Server_dubbo" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="Dubbo-Client_dubbo" target="1.5" />
+      <module name="Dubbo-Interface" target="1.5" />
+      <module name="Dubbo-Server_dubbo" target="1.5" />
+    </bytecodeTargetLevel>
+  </component>
+</project>
