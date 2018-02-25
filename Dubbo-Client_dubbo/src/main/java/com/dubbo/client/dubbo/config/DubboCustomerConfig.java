@@ -28,6 +28,7 @@ public class DubboCustomerConfig {
         reference.setApplication(applicationConfig);
         reference.setRegistry(registryConfig);
         reference.setInterface("com.dubbo.intf.dubbo.DubboService");
+        reference.setCheck(false);
         DubboService dubboService = reference.get();
     }
 }

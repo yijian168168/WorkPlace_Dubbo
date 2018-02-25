@@ -6,6 +6,7 @@
         <option value="$PROJECT_DIR$/Dubbo-Interface/pom.xml" />
         <option value="$PROJECT_DIR$/Dubbo-Server_dubbo/pom.xml" />
         <option value="$PROJECT_DIR$/Dubbo-Client_dubbo/pom.xml" />
+        <option value="$PROJECT_DIR$/dubbo-server-threadpool/pom.xml" />
       </list>
     </option>
   </component>

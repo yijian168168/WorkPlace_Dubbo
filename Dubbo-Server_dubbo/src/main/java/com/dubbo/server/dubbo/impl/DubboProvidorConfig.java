@@ -46,5 +46,6 @@ public class DubboProvidorConfig {
         //暴露及注册服务
         serviceConfig.export();
 
+
     }
 }

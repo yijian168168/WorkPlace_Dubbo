@@ -1,0 +1,2 @@
+#自定义dubbo线程池
+dubboThreadPool=com.dubbo.server.threadpooltest.threadpool.DubboThreadPool
