@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration>
+    <Appenders>
+        <!-- 输出到控制台的配置 -->
+        <Console name="stdout" target="SYSTEM_OUT">
+            <!-- 输出格式 -->
+            <PatternLayout pattern="%highlight{[%-5p][%sn][%d][%-8t](%F:%L)[%m]} %n"/>
+        </Console>
+
+        <!--按时间归档日志-->
+        <RollingFile name="appender1" fileName="E:/appLogs/log4j2/appender1.log"
+                     filePattern="E:/appLogs/log4j2/appender1-%d{yyyyMMdd}-%i.log"
+                     ignoreExceptions="false">
+            <PatternLayout pattern="%highlight{[%-5p][%sn][%d][%-8t](%F:%L)[%m]} %n"/>
+            <Policies>
+                <!--按时间归档日志，每一小时归档一次-->
+                <TimeBasedTriggeringPolicy interval="1" modulate="true"/>
+            </Policies>
+        </RollingFile>
+
+        <!--按文件大小归档日志-->
+        <!--<RollingFile name="appender2" fileName="E:/data/appLogs/log4j2/appender2.log"
+                     filePattern="E:/data/appLogs/log4j2/appender2-%d{yyyyMMdd}-%i.log"
+                     ignoreExceptions="false">
+            <PatternLayout pattern="%highlight{[%-5p][%d][%-8t](%F:%L)[%m] }%n"/>
+            <Policies>
+                &lt;!&ndash;按日志文件大小归档日志，达到指定大小即归档日志&ndash;&gt;
+                <SizeBasedTriggeringPolicy size="2 MB"/>
+            </Policies>
+            &lt;!&ndash;同一个filePattern下最多保留20个归档文件，如果超过这个数字，旧的文件将被覆盖，默认归档7个文件&ndash;&gt;
+            <DefaultRolloverStrategy max="20"/>
+        </RollingFile>-->
+
+        <!--按时间和文件大小双重规则归档日志-->
+        <!--可以写成压缩包的形式 例如：logs/app-%d{MM-dd-yyyy}.log.gz-->
+        <!--<RollingFile name="appender3" fileName="E:/data/appLogs/log4j2/appender3.log"
+                     filePattern="E:/data/appLogs/log4j2/appender3-%d{yyyyMMdd}-%i.log"
+                     ignoreExceptions="false">
+            <PatternLayout pattern="%highlight{[%-5p][%d][%-8t](%F:%L)[%m]} %n"/>
+            <Policies>
+                &lt;!&ndash;按时间归档日志，每一小时归档一次&ndash;&gt;
+                <TimeBasedTriggeringPolicy interval="1" modulate="true"/>
+                &lt;!&ndash;按日志文件大小归档日志，达到指定大小即归档日志&ndash;&gt;
+                <SizeBasedTriggeringPolicy size="2 MB"/>
+            </Policies>
+        </RollingFile>-->
+    </Appenders>
+
+    <Loggers>
+        <!--org.springframework.core 包的日志级别为 info -->
+        <logger name="org.springframework.core" level="info"/>
+        <!-- 配置记录器级别 -->
+        <Root level="info">
+            <!-- 输出设置 -->
+            <AppenderRef ref="stdout"/>
+            <AppenderRef ref="appender1"/>
+            <!--<AppenderRef ref="appender2"/>-->
+            <!--<AppenderRef ref="appender3"/>-->
+        </Root>
+    </Loggers>
+</Configuration> 
